@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Academy - Online AI Classes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">AI Academy</div>
+            <ul>
+                <li><a href="#work">Work</a></li>
+                <li class="dropdown">
+                    <a href="#services">Services</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#ai-automation">AI and Automation</a></li>
+                        <li><a href="#rpa">Robotic Process Automation</a></li>
+                        <li><a href="#zapier">Zapier Consulting</a></li>
+                        <li><a href="#make">Make.com Consulting</a></li>
+                        <li><a href="#monday">Monday.com Specialists</a></li>
+                        <li><a href="#crm">CRM Systems</a></li>
+                        <li><a href="#training">Training</a></li>
+                    </ul>
+                </li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Master Artificial Intelligence</h1>
+            <p>Learn from industry experts and build real-world AI applications</p>
+            <button class="cta-button" onclick="showModal()">Start Learning Today</button>
+        </div>
+    </section>
+
+    <section id="training" class="training-section">
+        <div class="container">
+            <h2>Training Programs</h2>
+            <p class="section-description">Enhance your skills with our comprehensive training programs</p>
+            <div class="training-grid">
+                <div class="training-card">
+                    <div class="card-media" style="--poster-image: url('assets/images/llm-rags.jpeg')">
+                        <video class="course-video">
+                            <source src="assets/videos/llm-rags.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-controls">
+                            <button class="play-pause">▶</button>
+                            <div class="progress-bar">
+                                <div class="progress"></div>
+                                <span class="time">0:00/0:00</span>
+                            </div>
+                            <div class="volume-control">
+                                <button class="volume">🔊</button>
+                                <div class="volume-slider">
+                                    <div class="volume-progress"></div>
+                                </div>
+                            </div>
+                            <button class="fullscreen">⛶</button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>LLM Mastery</h3>
+                        <p>Master Large Language Models and their applications in modern AI solutions.</p>
+                        <ul class="features">
+                            <li>Prompt Engineering</li>
+                            <li>Fine-tuning Techniques</li>
+                            <li>LLM Integration & Deployment</li>
+                        </ul>
+                        <div class="card-footer">
+                            <span class="duration">6 Weeks</span>
+                            <span class="price">$999</span>
+                        </div>
+                        <button class="enroll-btn">Enroll Now</button>
+                    </div>
+                </div>
+                <div class="training-card">
+                    <div class="card-media" style="--poster-image: url('assets/images/tosca-automation.jpeg')">
+                        <video class="course-video">
+                            <source src="assets/videos/tosca-automation.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-controls">
+                            <button class="play-pause">▶</button>
+                            <div class="progress-bar">
+                                <div class="progress"></div>
+                                <span class="time">0:00/0:00</span>
+                            </div>
+                            <div class="volume-control">
+                                <button class="volume">🔊</button>
+                                <div class="volume-slider">
+                                    <div class="volume-progress"></div>
+                                </div>
+                            </div>
+                            <button class="fullscreen">⛶</button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Tosca Automation</h3>
+                        <p>Master test automation with Tosca's powerful no-code testing platform.</p>
+                        <ul class="features">
+                            <li>Test Case Design</li>
+                            <li>Automated Testing</li>
+                            <li>CI/CD Integration</li>
+                        </ul>
+                        <div class="card-footer">
+                            <span class="duration">8 Weeks</span>
+                            <span class="price">$1,199</span>
+                        </div>
+                        <button class="enroll-btn">Enroll Now</button>
+                    </div>
+                </div>
+                <div class="training-card">
+                    <div class="card-media" style="--poster-image: url('assets/images/ai-agents.jpeg')">
+                        <video class="course-video">
+                            <source src="assets/videos/ai-agents.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-controls">
+                            <button class="play-pause">▶</button>
+                            <div class="progress-bar">
+                                <div class="progress"></div>
+                                <span class="time">0:00/0:00</span>
+                            </div>
+                            <div class="volume-control">
+                                <button class="volume">🔊</button>
+                                <div class="volume-slider">
+                                    <div class="volume-progress"></div>
+                                </div>
+                            </div>
+                            <button class="fullscreen">⛶</button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>AI Agents & Automation</h3>
+                        <p>Build intelligent agents that can perform complex tasks autonomously.</p>
+                        <ul class="features">
+                            <li>Agent Architecture</li>
+                            <li>Task Planning & Execution</li>
+                            <li>Multi-Agent Systems</li>
+                        </ul>
+                        <div class="card-footer">
+                            <span class="duration">10 Weeks</span>
+                            <span class="price">$1,499</span>
+                        </div>
+                        <button class="enroll-btn">Enroll Now</button>
+                    </div>
+                </div>
+                <div class="training-card">
+                    <div class="card-media" style="--poster-image: url('assets/images/n8n.jpg')">
+                        <video class="course-video">
+                            <source src="assets/videos/n8n.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-controls">
+                            <button class="play-pause">▶</button>
+                            <div class="progress-bar">
+                                <div class="progress"></div>
+                                <span class="time">0:00/0:00</span>
+                            </div>
+                            <div class="volume-control">
+                                <button class="volume">🔊</button>
+                                <div class="volume-slider">
+                                    <div class="volume-progress"></div>
+                                </div>
+                            </div>
+                            <button class="fullscreen">⛶</button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>n8n Workflow Expert</h3>
+                        <p>Create sophisticated automation workflows using n8n's powerful platform.</p>
+                        <ul class="features">
+                            <li>Custom Node Development</li>
+                            <li>Complex Workflow Design</li>
+                            <li>API Integration</li>
+                        </ul>
+                        <div class="card-footer">
+                            <span class="duration">6 Weeks</span>
+                            <span class="price">$899</span>
+                        </div>
+                        <button class="enroll-btn">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits" class="benefits">
+        <h2>Why Choose Us?</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <h3>Expert Instructors</h3>
+                <p>Learn from AI professionals with years of industry experience</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Hands-on Projects</h3>
+                <p>Build real AI applications during the course</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Flexible Schedule</h3>
+                <p>Learn at your own pace with 24/7 access to course materials</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Ready to Begin?</h2>
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <select required>
+                <option value="">Select a Course</option>
+                <option value="fundamentals">AI Fundamentals</option>
+                <option value="ml">Machine Learning</option>
+                <option value="dl">Deep Learning</option>
+            </select>
+            <button type="submit">Enroll Now</button>
+        </form>
+    </section>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="hideModal()">&times;</span>
+            <h2>Start Your AI Journey</h2>
+            <p>Get 20% off your first course when you enroll today!</p>
+            <button onclick="scrollToContact()">Enroll Now</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 AI Academy. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

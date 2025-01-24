@@ -1,0 +1,635 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Navigation */
+header {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2962ff;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #2962ff;
+}
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    min-width: 250px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    z-index: 1000;
+    padding: 8px 0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid white;
+}
+
+.dropdown-content li {
+    display: block;
+    padding: 0;
+}
+
+.dropdown-content li a {
+    padding: 12px 20px;
+    display: block;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.dropdown-content li a:hover {
+    background-color: #f8f9fa;
+    color: #2962ff;
+    padding-left: 24px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #2962ff 0%, #1565c0 100%);
+    color: white;
+    padding: 8rem 2rem 4rem;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Buttons */
+.cta-button {
+    background: #ff4081;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background: #f50057;
+}
+
+/* Training Section */
+.training-section {
+    padding: 6rem 2rem;
+    background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-description {
+    text-align: center;
+    color: #666;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+.training-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    padding: 1rem;
+}
+
+.training-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.training-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Card Media Styles */
+.card-media {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-media::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--poster-image);
+    background-position: center;
+    background-size: cover;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.card-media:hover::before {
+    opacity: 0;
+}
+
+/* Video Styles */
+.course-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* Video Controls */
+.video-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 3;
+    height: 36px;
+}
+
+.card-media:hover .video-controls {
+    opacity: 1;
+}
+
+.video-controls button {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 4px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+}
+
+.video-controls button:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.2);
+    position: relative;
+    cursor: pointer;
+    border-radius: 1.5px;
+    margin: 0 5px;
+}
+
+.progress-bar:hover {
+    height: 5px;
+    margin-top: -1px;
+}
+
+.progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #ff0000;
+    border-radius: inherit;
+    width: 0;
+}
+
+.progress-bar:hover .progress::after {
+    content: '';
+    position: absolute;
+    right: -4px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background: #ff0000;
+    border-radius: 50%;
+}
+
+.time {
+    color: #fff;
+    font-size: 12px;
+    font-family: monospace;
+    min-width: 90px;
+    text-align: center;
+}
+
+.volume-control {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.volume-slider {
+    width: 0;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 1.5px;
+    overflow: hidden;
+    transition: width 0.2s ease;
+    margin-left: 4px;
+}
+
+.volume-control:hover .volume-slider {
+    width: 50px;
+}
+
+.volume-progress {
+    height: 100%;
+    background: #fff;
+    width: 100%;
+}
+
+.fullscreen {
+    margin-left: auto;
+}
+
+.fullscreen:hover {
+    transform: scale(1.1);
+}
+
+/* Overlay Styles */
+.media-overlay {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(41,98,255,0.9);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* Slider Styles */
+.slider {
+    position: relative;
+}
+
+.slider img:not(:first-child) {
+    display: none;
+}
+
+.slider-dots {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+}
+
+.dot.active {
+    background: white;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    .card-media {
+        height: 180px;
+    }
+    
+    .play-button {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+}
+
+.training-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.training-card {
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.card-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+}
+
+.features li {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-footer {
+    padding: 1rem 0;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.card-content {
+    padding: 2rem;
+}
+
+.training-card h3 {
+    color: #2962ff;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.training-card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.features {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.features li {
+    padding: 0.5rem 0;
+    color: #444;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.features li::before {
+    content: '✓';
+    color: #2962ff;
+    position: absolute;
+    left: 0;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.duration {
+    color: #666;
+    font-weight: 500;
+}
+
+.price {
+    color: #2962ff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.enroll-btn {
+    width: 100%;
+    background: #2962ff;
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.enroll-btn:hover {
+    background: #1e4bd8;
+}
+
+@media (max-width: 768px) {
+    .training-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .training-card {
+        margin: 0 auto;
+        max-width: 400px;
+    }
+}
+
+/* Benefits Section */
+.benefits {
+    padding: 4rem 2rem;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+.benefit-card {
+    text-align: center;
+    padding: 2rem;
+}
+
+/* Contact Section */
+.contact {
+    background: #f5f5f5;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+form {
+    max-width: 500px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input, select {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 2000;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+}
+
+.close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Section Headers */
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+
+    .dropdown {
+        width: 100%;
+    }
+
+    .dropdown-content {
+        position: static;
+        transform: none;
+        width: 100%;
+        box-shadow: none;
+        margin-top: 0;
+        padding: 0;
+        background: #f8f9fa;
+    }
+
+    .dropdown-content::before {
+        display: none;
+    }
+
+    .dropdown-content li a {
+        padding: 12px 20px;
+        text-align: center;
+    }
+
+    .dropdown-content li a:hover {
+        padding-left: 20px;
+    }
+}
