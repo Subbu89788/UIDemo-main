@@ -174,3 +174,9 @@ function handleSubmit(event) {
     // Add your form submission logic here
     console.log('Form submitted');
 }
+
+// Handle Work tab navigation
+document.querySelector('a[href="WorkUI/Workindex.html"]').addEventListener('click', (event) => {
+    event.preventDefault();
+    window.location.href = 'WorkUI/Workindex.html';
+});
